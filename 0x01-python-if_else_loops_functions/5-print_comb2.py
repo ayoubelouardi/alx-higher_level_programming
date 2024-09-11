@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for k in range(100):
     if k != 99:
-        print(f"{k:00}", end=", ")
+        print("{:00}".format(k), end=", ")
     else:
-        print(f"{k:00}")
+        print("{:00}".format(k))
