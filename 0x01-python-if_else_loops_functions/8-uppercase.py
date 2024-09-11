@@ -8,7 +8,7 @@ def uppercase(str):
         if islower(c):
             c = ord(c) - 32
             alpha = chr(c)
-            print(f"{alpha}", end="")
+            print("{}".format(alpha), end="")
         else:
-            print(f"{c}", end="")
+            print("{}".format(c), end="")
     print("")
