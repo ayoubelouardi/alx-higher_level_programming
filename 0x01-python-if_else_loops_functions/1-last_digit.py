@@ -5,6 +5,7 @@ if number > 0:
     last = number % 10
 else:
     last = abs(number) % 10
+    last = abs(last)
 if last == 0:
     print("Last digit of", number, "is", last, "and is 0")
 elif last < 6:
