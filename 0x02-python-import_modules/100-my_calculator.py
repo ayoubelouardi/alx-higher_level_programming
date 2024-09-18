@@ -8,23 +8,22 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     op = sys.argv[2]
-    match op:
-        case '+':
-            a = int(sys.argv[1])
-            b = int(sys.argv[3])
-            print("{} + {} = {}".format(sys.argv[1], sys.argv[3], add(a, b)))
-        case '-':
-            a = int(sys.argv[1])
-            b = int(sys.argv[3])
-            print("{} - {} = {}".format(sys.argv[1], sys.argv[3], sub(a, b)))
-        case '*':
-            a = int(sys.argv[1])
-            b = int(sys.argv[3])
-            print("{} * {} = {}".format(sys.argv[1], sys.argv[3], mul(a, b)))
-        case '/':
-            a = int(sys.argv[1])
-            b = int(sys.argv[3])
-            print("{} / {} = {}".format(sys.argv[1], sys.argv[3], div(a, b)))
-        case _:
-            print("Unknown operator. Available operators: +, -, * and /")
-            exit(1)
+    if op == '+':
+        a = int(sys.argv[1])
+        b = int(sys.argv[3])
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif op == '-':
+        a = int(sys.argv[1])
+        b = int(sys.argv[3])
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    elif op == '*':
+        a = int(sys.argv[1])
+        b = int(sys.argv[3])
+        print("{} * {} = {}".format(a, b, mul(a, b)))
+    elif op == '/':
+        a = int(sys.argv[1])
+        b = int(sys.argv[3])
+        print("{} / {} = {}".format(sys.argv[1], sys.argv[3], div(a, b)))
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
