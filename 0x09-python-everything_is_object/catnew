@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Loop through all files in the current directory
+for file in *; do
+    # Check if it's a regular file
+    if [ -f "$file" ]; then
+        echo "$file:"
+        # Print the contents of the file
+        cat "$file"
+        # Print the name of the file
+        echo "----------" # Print a new line for better readability
+    fi
+done
