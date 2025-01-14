@@ -3,7 +3,8 @@
 Module that performs MySQL queries using SQLAlchemy.
 
 This script connects to a MySQL database, creates tables if they don't exist,
-and queries the City table to display city details along with their associated state.
+and queries the City table to display city details along with their
+associated state.
 """
 
 import sys
@@ -40,7 +41,10 @@ def main():
 
     try:
         # Create database connection and tables
-        engine = create_database_connection(sys.argv[1], sys.argv[2], sys.argv[3])
+        engine = create_database_connection(
+                sys.argv[1],
+                sys.argv[2],
+                sys.argv[3])
         Base.metadata.create_all(engine)
 
         # Create a session and query the database
