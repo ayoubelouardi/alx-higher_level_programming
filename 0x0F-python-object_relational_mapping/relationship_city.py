@@ -1,16 +1,29 @@
 #!/usr/bin/python3
-from sqlalchemy import Column, Integer, String, text, ForeignKey
+""" Module that defines the `City` class using SQLAlchemy's declarative base.
+
+This module creates a `City` class that represents a table in a MySQL database.
+The class inherits from `Base` and defines columns for `id`, `name`, and
+`state_id`, where `state_id` is a foreign key referencing the `states` table.
+"""
+
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 from relationship_state import Base
-"""
-    Module that performs creates a States class based off of Base.
-"""
 
 
 class City(Base):
     """
-        The ``City`` class which inherits from ``Base`` class.
+    The ``City`` class represents a table in the database.
+
+    Attributes:
+        id (int): The primary key for the city.  name (str): The name of the
+        city, with a maximum length of 128 characters.
+        state_id (int): A foreign key referencing the `id`
+        column in the `states` table.  state (State): A relationship to the
+        `State` class.
     """
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    id: int = Column(Integer, primary_key=True)
+    name: str = Column(String(128), nullable=False)
+    state_id: int = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship("State", back_populates="cities")
