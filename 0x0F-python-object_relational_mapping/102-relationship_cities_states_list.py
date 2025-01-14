@@ -4,9 +4,7 @@ from relationship_city import City
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 import sys
-"""
-    Module that performs MySQL query through MySQLAlchemy.
-"""
+"""Module that performs MySQL query through MySQLAlchemy."""
 
 
 if __name__ == "__main__":
